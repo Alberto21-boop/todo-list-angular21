@@ -1,0 +1,38 @@
+.navbar{
+    background: #000000;
+    margin-top: 10px;
+    padding-top: 25px;
+    padding-bottom: 28px;
+    border: #e6e600;
+    text-shadow: 0 0 3px #e6e600, 0 0 5px #ffff1a;
+    font-size: 60px;
+    
+}
+.navbar-brand{
+    color: #ffff1a;
+    text-shadow: #e6e600;
+    
+}
+@font-face {
+    font-family: initial;
+    font-weight: 50;
+    font-size: 18px;
+    src: url();
+}
+.background{
+    background-color: #333333;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  
+ }
+// .jumbotron {
+
+//     padding: 2rem 1rem;
+//     margin-bottom: 2rem;
+//     background: #333333;
+//     border-radius: .3rem;
+//     width: 400px;
+
+// }

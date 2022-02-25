@@ -1,0 +1,28 @@
+h1{
+    text-shadow: 0 0 13px #cccc00, 0 0 70px #e6e600;
+}
+.button{
+    border-color: #cccc00;
+    text-shadow: #e6e600;
+}
+.background{
+    background: #333333;
+}
+.jumbotron {
+
+    // padding: 2rem 1rem;
+    // margin-bottom: 2rem;
+    background: #333333;
+    // border-radius: .3rem;
+    width: 1350px;
+    height: 400px;
+    text-align: center;
+}
+.container{
+    width: 450px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  
+ }
