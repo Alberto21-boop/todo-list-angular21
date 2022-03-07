@@ -1,0 +1,10 @@
+<div class="background">
+    <ul>
+        <li  *ngFor="let item of items"> 
+            {{item.text}} <button  (click)="removeTarefa(item)">Remover</button> 
+            
+        </li>
+        
+    </ul>
+    <app-input-property [items]="items"></app-input-property>
+</div>

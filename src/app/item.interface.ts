@@ -4,3 +4,5 @@ export interface Item{
     
 }
 let item: Item = { text: 'item 1' };
+
+

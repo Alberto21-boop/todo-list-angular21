@@ -6,17 +6,22 @@ import { AppComponent } from './app.component';
 import { TopoComponent } from './topo/topo.component';
 import { PainelComponent } from './painel/painel.component';
 import { InputComponent } from './input/input.component';
+import { InputPropertyComponent } from './input-property/input-property.component';
+import { OutputPropertyComponent } from './output-property/output-property.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopoComponent,
     PainelComponent,
-    InputComponent
+    InputComponent,
+    InputPropertyComponent,
+    OutputPropertyComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
