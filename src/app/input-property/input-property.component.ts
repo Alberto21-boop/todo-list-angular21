@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Item } from '../item.interface';
 
 
@@ -8,21 +8,28 @@ import { Item } from '../item.interface';
   styleUrls: ['./input-property.component.scss']
 })
 export class InputPropertyComponent implements OnInit {
-  item: Item = {text: ''};
+  
+  @Output() adicionar: EventEmitter<any>= new EventEmitter()
+  
+  tarefa;
+  //item: Item = {text: ''};
   @Input() items: Item[] = [{text: 'item 1'}, {text: 'item 2'}, {text: 'item 3'}, {text: 'item 4'}];
+  
     
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  addItem(){
-    if(!this.item){
+  remover(tipo: string){
+    
+  }
+  addItem(text: string){
+    if(!this.tarefa){
       return
     }
-    console.log(this.item);
-    this.items.push(this.item);
-    console.log(this.items);
+    this.adicionar.emit(this.items.push({text}))
+        
   }
 
 }

@@ -1,10 +1,17 @@
 <div class="background">
     <ul>
-        <li  *ngFor="let item of items"> 
-            {{item.text}} <button  (click)="removeTarefa(item)">Remover</button> 
-            
+        <li class="itemDaLista" *ngFor="let item of items">
+
+            <input [id]="item.text" type="checkbox" (change)="item.done = !item.done" (click)="completeItem()"
+                [checked]="item.done">
+
+            <label [for]="item.text" [ngClass]="{ complete: item.done }">
+                {{item.text}}
+            </label>
+            <button class="btn btn-outline-warning" (click)="removeTarefa(item)">Remover</button>
+
         </li>
-        
+
     </ul>
-    <app-input-property [items]="items"></app-input-property>
+    
 </div>

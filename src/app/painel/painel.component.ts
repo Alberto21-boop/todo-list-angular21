@@ -7,7 +7,10 @@ import { Component, OnInit, Input, Output } from '@angular/core';
   styleUrls: ['./painel.component.scss']
 })
 export class PainelComponent implements OnInit {
-
+  
+  adicionar(tipo: string){
+    
+  }
   constructor() { }
 
   ngOnInit(): void {

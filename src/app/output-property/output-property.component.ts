@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 import { Item } from '../item.interface';
 
@@ -8,12 +8,38 @@ import { Item } from '../item.interface';
   styleUrls: ['./output-property.component.scss']
 })
 export class OutputPropertyComponent implements OnInit {
+  
+  editable: boolean = false;
+
+  @Output() remover: EventEmitter<any> = new EventEmitter()
 
   @Output() tarefa;
-  @Output() items: Item[] = [{ text: 'item 1' }, { text: 'item 2' }, { text: 'item 3' }, { text: 'item 4' }];
+  @Input() items: Item[] = [{ text: 'item 1' }, { text: 'item 2' }, { text: 'item 3' }, { text: 'item 4' }];
+  
+  @Output() update = new EventEmitter<object>();
 
+  
+ 
   removeTarefa(item: Item) {
-    this.items.splice(this.items.indexOf(item), 1)
+  this.remover.emit( this.items.splice(this.items.indexOf(item), 1))    
+
+  }
+
+  completeItem() {
+
+    this.update.emit({
+
+      item: this.items,
+
+    });
+
+    
+
+  }
+
+  isEditable() {
+
+    this.editable = !this.editable;
 
   }
 
@@ -21,5 +47,6 @@ export class OutputPropertyComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
 
 }
