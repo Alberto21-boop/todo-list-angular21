@@ -14,7 +14,7 @@ export class OutputPropertyComponent implements OnInit {
   @Output() remover: EventEmitter<any> = new EventEmitter()
 
   @Output() tarefa;
-  @Input() items: Item[] = [{ text: 'item 1' }, { text: 'item 2' }, { text: 'item 3' }, { text: 'item 4' }];
+  @Input() items: Item[] = [{ text: 'item 1 ' }, { text: 'item 2 ' }, { text: 'item 3 ' }, { text: 'item 4 ' }];
   
   @Output() update = new EventEmitter<object>();
 
@@ -37,7 +37,7 @@ export class OutputPropertyComponent implements OnInit {
 
   }
 
-  isEditable() {
+  isEditing() {
 
     this.editable = !this.editable;
 

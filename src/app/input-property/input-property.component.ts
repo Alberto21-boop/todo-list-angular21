@@ -13,7 +13,7 @@ export class InputPropertyComponent implements OnInit {
   
   tarefa;
   //item: Item = {text: ''};
-  @Input() items: Item[] = [{text: 'item 1'}, {text: 'item 2'}, {text: 'item 3'}, {text: 'item 4'}];
+  @Input() items: Item[] = [{text: 'item 1 '}, {text: 'item 2 '}, {text: 'item 3 '}, {text: 'item 4 '}];
   
     
   constructor() { }

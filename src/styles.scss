@@ -1,3 +1,51 @@
 .itemDaLista{
     list-style-type: none;
 }
+
+input{
+padding: 5.5px 10px;
+border-radius: 8px;
+margin-top: 2px;
+}
+
+*
+{
+    font-size: 16px;
+}
+
+h1{
+    text-transform: uppercase;
+    font-size: 34px;
+    font-weight: 600px;
+}
+
+button{
+    border-color: #cccc00;
+    text-shadow: #e6e600;
+    display: inline-block;
+    font-size: 14px;
+    padding: 5px;
+    margin: 4px;
+    cursor: pointer;
+    text-align: center;	
+    text-decoration: none;
+    outline: none;
+    color: #0d0c0c;
+    background-color: yellow;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 5px rgb(2, 2, 2);
+}
+button:hover {background-color: rgb(218, 218, 112)}
+
+button:active {
+  background-color: yellow;
+  box-shadow: 0 5px black;
+  transform: translateY(4px);
+}
+
+label{
+    font-size: 20px;
+}
+
