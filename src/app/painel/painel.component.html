@@ -1,12 +1,19 @@
 <div class="container">
-    
-    <div class="jumbotron">
-        <div class="row">
-            <div class="col">
-                <h1>Tarefas</h1>
-               <app-input-property (adicionar)="adicionar($event)"></app-input-property>
-            </div>
-        </div>
-    </div>
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col">
+        <h1>Tarefas</h1>
+        <app-input-property
+          (adicionar)="adicionar($event)"
+        ></app-input-property>
 
+        <app-output-property
+          [items]="items"
+          (remover)="remover($event)"
+          (atualizado)="editarTarefa($event)"
+          (salvo)="salvarTarefa($event)"
+        ></app-output-property>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,17 +1,31 @@
 <div class="background">
-    <ul>
-        <li class="itemDaLista" *ngFor="let item of items">
+  <ul>
+    <li class="itemDaLista" *ngFor="let item of items">
+      <input
+        [id]="item.text"
+        type="checkbox"
+        (change)="item.done = !item.done"
+        (click)="completeItem()"
+        [checked]="item.done"
+      />
 
-            <input [id]="item.text" type="checkbox" (change)="item.done = !item.done" (click)="completeItem()"
-                [checked]="item.done">
-
-            <label [for]="item.text" [ngClass]="{ complete: item.done }">
-                {{item.text}}
-            </label>
-            <button class="btn btn-outline-warning" (click)="removeTarefa(item)">Remover</button>
-
-        </li>
-
-    </ul>
-    
+      <label [for]="item.text" [ngClass]="{ complete: item.done }">
+        {{ item.text }}
+      </label>
+      <button class="btn btn-outline-warning" (click)="removeTarefa(item)">
+        Remover
+      </button>
+      <button class="btn" (click)="editarTarefa(item)">Editar</button>
+    </li>
+    <li>
+      <div *ngIf="isEditing">
+        <div>
+          <input type="text" [(ngModel)]="tarefaEditada" />
+          <button (click)="salvarTarefa(tarefaEditada)" class="btn">
+            salvar
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
 </div>

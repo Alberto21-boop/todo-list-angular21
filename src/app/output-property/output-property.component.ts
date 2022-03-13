@@ -1,52 +1,44 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { __importDefault } from 'tslib';
 
 import { Item } from '../item.interface';
 
 @Component({
   selector: 'app-output-property',
   templateUrl: './output-property.component.html',
-  styleUrls: ['./output-property.component.scss']
+  styleUrls: ['./output-property.component.scss'],
 })
-export class OutputPropertyComponent implements OnInit {
-  
-  editable: boolean = false;
+export class OutputPropertyComponent {
+  isEditing: boolean = false;
+  atualizado = new EventEmitter();
+  salvo = new EventEmitter();
+  tarefaEditada: string = '';
 
-  @Output() remover: EventEmitter<any> = new EventEmitter()
+  @Output() remover = new EventEmitter();
 
-  @Output() tarefa;
-  @Input() items: Item[] = [{ text: 'item 1 ' }, { text: 'item 2 ' }, { text: 'item 3 ' }, { text: 'item 4 ' }];
-  
+  @Input() items: Item[];
+
   @Output() update = new EventEmitter<object>();
 
-  
- 
   removeTarefa(item: Item) {
-  this.remover.emit( this.items.splice(this.items.indexOf(item), 1))    
-
+    this.remover.emit(item);
   }
 
   completeItem() {
-
     this.update.emit({
-
       item: this.items,
-
     });
-
-    
-
   }
 
-  isEditing() {
-
-    this.editable = !this.editable;
-
+  editarTarefa(item: Item) {
+    this.isEditing = !this.isEditing;
+    this.atualizado.emit(item);
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  salvarTarefa(editado: string) {
+    this.isEditing = !this.isEditing;
+    this.tarefaEditada = editado;
+    console.log(editado);
+    this.salvo.emit(editado);
   }
-
-
 }

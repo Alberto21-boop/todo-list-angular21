@@ -1,16 +1,4 @@
 <div class="tarefa">
-
-    <input type="text" [(ngModel)]="tarefa" [value]="tarefa">
-    <button (click)="addItem(tarefa)">Adicionar</button>
-
-    <app-output-property [items]="items" (remover)="remover($event)"></app-output-property>
-    
-    <form>
-    
-        <input type="text" [(ngModel)]="tarefa" [value]="tarefa">
-        
-    </form>
-    
-    <button class="button" (click)="addItem(tarefa)">Editar</button>
-    
+  <input type="text" [(ngModel)]="item" [value]="item" />
+  <button (click)="addItem(item)">Adicionar</button>
 </div>
